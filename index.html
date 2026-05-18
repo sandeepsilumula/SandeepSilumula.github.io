@@ -847,4 +847,194 @@
                     </li>
                     <li>
                         <h4>Bachelor of Technology in Computer Science Engineering</h4>
-                        <p>
+                        <p>Jawaharlal Nehru Technological University, India</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <p class="section-tag">Showcase</p>
+            <h2 class="section-title">Technical Case Studies</h2>
+        </div>
+
+        <div class="project-grid">
+            <div class="project-card">
+                <div>
+                    <div class="project-icon"><i class="fa-solid fa-cloud"></i></div>
+                    <h3>Automated Three-Tier AWS Infrastructure</h3>
+                    <p>Fault-tolerant architecture isolating database tiers and compute nodes within dark subnets. Enforces strict zero-trust security group configurations and hooks up end-to-end multi-tier CloudWatch operational dashboards.</p>
+                    <div class="project-tags">
+                        <span>Terraform</span>
+                        <span>GitHub Actions</span>
+                        <span>AWS CloudWatch</span>
+                        <span>Auto Scaling</span>
+                    </div>
+                </div>
+                <div class="project-btn-group">
+                    <a href="https://sandeepsilumula.github.io/realworld-aws-infrastructure/" target="_blank" class="project-btn btn-live">🌐 Case Study</a>
+                    <a href="https://github.com/sandeepsilumula/realworld-aws-infrastructure" target="_blank" class="project-btn btn-code">💻 Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <h3>Kubernetes Microservices Fleet</h3>
+                    <p>Decoupled multi-node container mesh runtime deployment featuring custom NGINX path ingress mappings, private certificate routing rules, dynamic volumes, and self-healing configurations.</p>
+                    <div class="project-tags">
+                        <span>Kubernetes</span>
+                        <span>Docker</span>
+                        <span>Helm Charts</span>
+                        <span>GitOps</span>
+                    </div>
+                </div>
+                <div class="project-btn-group">
+                    <a href="#" class="project-btn btn-live opacity-50 cursor-not-allowed" onclick="return false;">🌐 Live Review</a>
+                    <a href="https://github.com/sandeepsilumula" target="_blank" class="project-btn btn-code">💻 Code Profile</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>DevSecOps Threat Scanning Pipeline</h3>
+                    <p>Automated integration workflow implementing rigid quality testing gates. Enforces automated filesystem compliance auditing, static dependency assessment scanning, and secure build distributions.</p>
+                    <div class="project-tags">
+                        <span>SonarQube</span>
+                        <span>Trivy</span>
+                        <span>GitHub Actions</span>
+                        <span>SecOps</span>
+                    </div>
+                </div>
+                <div class="project-btn-group">
+                    <a href="#" class="project-btn btn-live opacity-50 cursor-not-allowed" onclick="return false;">🌐 Live Review</a>
+                    <a href="https://github.com/sandeepsilumula" target="_blank" class="project-btn btn-code">💻 Code Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-box">
+            <p class="section-tag" style="color: var(--accent)">Let's Collaborate</p>
+            <h2 class="section-title">Want to build something exceptional?</h2>
+            <p>I'm always open to architectural evaluations, operational consulting, or simply networking with fellow technical systems builders.</p>
+
+            <div class="social-row">
+                <a href="mailto:sandeep.silumula@outlook.com" class="social-btn magnetic" title="Email Me"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/sandeepsilumula" target="_blank" class="social-btn magnetic" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/sandeep-silumula" target="_blank" class="social-btn magnetic" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Sandeep Silumula. All rights reserved.</p>
+        <p>Engineered with Tailwind CSS & GitHub Pages</p>
+    </footer>
+
+    <script>
+        /* --- 1. LIGHT/DARK THEME CONTROLLER --- */
+        const themeBtn = document.getElementById('themeBtn');
+        const icon = themeBtn.querySelector('i');
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateIcon(currentTheme);
+
+        themeBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let newTheme = (theme === 'dark') ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            icon.className = (theme === 'light') ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        }
+
+        /* --- 2. FLUID CUSTOM CURSOR CONTROL --- */
+        const cursorDot = document.getElementById('cursorDot');
+        const cursorFollower = document.getElementById('cursorFollower');
+
+        window.addEventListener('mousemove', (e) => {
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+            cursorFollower.style.left = e.clientX + 'px';
+            cursorFollower.style.top = e.clientY + 'px';
+        });
+
+        const interactables = document.querySelectorAll('a, button, .project-card, .image-frame, .info-card');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+
+        /* --- 3. MAGNETIC BUTTON MATRIX --- */
+        const magnetics = document.querySelectorAll('.magnetic');
+        magnetics.forEach(elem => {
+            elem.addEventListener('mousemove', (e) => {
+                if (window.innerWidth < 992) return;
+                const rect = elem.getBoundingClientRect();
+                const x = e.clientX - rect.left - (rect.width / 2);
+                const y = e.clientY - rect.top - (rect.height / 2);
+                elem.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            elem.addEventListener('mouseleave', () => {
+                elem.style.transform = 'translate(0px, 0px)';
+                elem.style.transition = 'translate 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+            });
+            elem.addEventListener('mouseenter', () => {
+                elem.style.transition = 'none';
+            });
+        });
+
+        /* --- 4. PARALLAX PARTICLE BACKGROUND ENGINE --- */
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        for (let i = 0; i < 60; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 1.5 + 0.5,
+                baseY: Math.random() * canvas.height,
+                speed: Math.random() * 0.15 + 0.05
+            });
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const activeTheme = document.documentElement.getAttribute('data-theme');
+            ctx.fillStyle = (activeTheme === 'light') ? 'rgba(37, 99, 235, 0.15)' : 'rgba(255, 255, 255, 0.15)';
+            const scrollY = window.scrollY;
+
+            particles.forEach(p => {
+                let currentY = p.baseY - (scrollY * p.speed);
+                if (currentY < -10) p.baseY += canvas.height;
+                if (currentY > canvas.height + 10) p.baseY -= canvas.height;
+
+                ctx.beginPath();
+                ctx.arc(p.x, currentY, p.radius, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+    </script>
+</body>
+
+</html>
