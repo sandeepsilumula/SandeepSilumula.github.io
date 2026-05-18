@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Portfolio | Infinite Scroll Motion</title>
+    <title>Sandeep Silumula | Senior Incident & DevOps Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -195,7 +195,7 @@
         /* --- HERO SECTION --- */
         #hero {
             min-height: 100vh;
-            padding: 0 10%;
+            padding: 12rem 10% 5rem 10%;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -246,26 +246,24 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* CLEAN STATIC SUB-HEADLINE (Rolling Flipper Removed) */
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             font-weight: 600;
-            color: var(--accent);
+            color: var(--text-main);
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
+            line-height: 1.4;
         }
 
-        .hero-subtitle i {
-            font-size: 1.3rem;
+        .hero-subtitle span {
+            color: var(--accent);
         }
 
         .hero-desc {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             color: var(--text-muted);
-            max-width: 580px;
+            max-width: 620px;
             margin-bottom: 2.5rem;
+            text-align: justify;
         }
 
         .btn-group {
@@ -322,24 +320,24 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            mix-blend-mode: luminosity;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), mix-blend-mode 0.8s ease;
+            /* ✅ CRITICAL LINK FIX: Changed extension pointer from .jpeg to match your uploaded .jpg name */
+            mix-blend-mode: normal; 
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .image-frame:hover img {
-            transform: scale(1.1);
-            mix-blend-mode: normal;
+            transform: scale(1.08);
         }
 
         /* --- SECTION GENERIC STYLES --- */
         section {
-            padding: 10rem 10% 5rem 10%;
+            padding: 6rem 10% 4rem 10%;
             position: relative;
             z-index: 1;
         }
 
         .section-header {
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
             overflow: hidden;
         }
 
@@ -347,37 +345,15 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--text-muted);
+            color: var(--accent);
             font-weight: 700;
             margin-bottom: 0.5rem;
-            transform: translateY(100%);
-            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .section-title {
             font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: -1px;
-            transform: translateY(100%);
-            transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.active .section-tag,
-        .reveal.active .section-title {
-            transform: translateY(0);
-        }
-
-        /* --- THE SLOW, NOTICEABLE SCROLL REVEAL --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(80px);
-            transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform, opacity;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         /* --- TIMELINE / EXPERIENCE --- */
@@ -391,14 +367,6 @@
         .timeline-item {
             position: relative;
             margin-bottom: 3.5rem;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .timeline-item.active {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .timeline-dot {
@@ -410,11 +378,11 @@
             border-radius: 50%;
             background: var(--accent);
             border: 2px solid var(--bg-main);
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.3s ease;
         }
 
         .timeline-item:hover .timeline-dot {
-            transform: scale(1.8);
+            transform: scale(1.6);
         }
 
         .timeline-meta {
@@ -422,7 +390,7 @@
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .role-title {
@@ -443,7 +411,70 @@
 
         .role-desc {
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 750px;
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        /* --- INFO CARDS MATRIX (Education & Certs) --- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.25rem;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .info-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+            border-b: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
+        .info-card h3 i {
+            color: var(--accent);
+        }
+
+        .info-list {
+            list-style: none;
+            space-y: 1.25rem;
+        }
+
+        .info-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-list li::before {
+            content: "➔";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+
+        .info-list h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .info-list p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         /* --- PROJECTS GRID --- */
@@ -451,14 +482,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
-            perspective: 1000px;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            perspective: 1000px;
         }
 
         .project-card {
@@ -470,38 +493,33 @@
             flex-direction: column;
             justify-content: space-between;
             box-shadow: 0 10px 30px var(--shadow);
-            transform-style: preserve-3d;
-            transform: translateZ(0);
-            transition: border-color 0.5s ease, box-shadow 0.5s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
         }
 
         .project-card:hover {
             border-color: var(--accent);
-            box-shadow: 0 20px 40px var(--shadow);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px var(--shadow);
         }
 
         .project-icon {
             font-size: 1.75rem;
             color: var(--accent);
-            margin-bottom: 1.5rem;
-            transform: translateZ(30px);
-            display: inline-block;
+            margin-bottom: 1.25rem;
         }
 
         .project-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
             letter-spacing: -0.5px;
-            transform: translateZ(25px);
         }
 
         .project-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             margin-bottom: 1.5rem;
-            transform: translateZ(20px);
+            line-height: 1.5;
         }
 
         .project-tags {
@@ -509,35 +527,47 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
-            transform: translateZ(15px);
         }
 
         .project-tags span {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             background: var(--border);
+            color: var(--text-main);
             padding: 0.25rem 0.75rem;
             border-radius: 6px;
         }
 
-        .project-link {
+        .project-btn-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: auto;
+        }
+
+        .project-btn {
+            text-align: center;
             text-decoration: none;
-            color: var(--text-main);
+            font-size: 0.85rem;
             font-weight: 700;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            transform: translateZ(20px);
-            width: fit-content;
+            padding: 0.65rem;
+            border-radius: 8px;
+            transition: background 0.2s, border-color 0.2s;
         }
 
-        .project-link i {
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        .btn-live {
+            background: var(--accent-gradient);
+            color: white;
         }
 
-        .project-link:hover i {
-            transform: translate(4px, -4px);
+        .btn-code {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        .btn-code:hover {
+            background: var(--border);
         }
 
         /* --- CONTACT --- */
@@ -554,15 +584,16 @@
 
         .contact-box p {
             color: var(--text-muted);
-            max-width: 500px;
+            max-width: 540px;
             margin: 1rem auto 2.5rem auto;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         .social-row {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .social-btn {
@@ -576,6 +607,12 @@
             justify-content: center;
             font-size: 1.35rem;
             text-decoration: none;
+        }
+
+        .social-btn:hover {
+            background: var(--accent);
+            color: white;
+            transform: scale(1.05);
         }
 
         /* --- FOOTER --- */
@@ -607,34 +644,15 @@
         }
 
         @keyframes pulse {
-            0% {
-                transform: scale(0.95);
-                opacity: 0.5;
-            }
-
-            50% {
-                transform: scale(1.1);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(0.95);
-                opacity: 0.5;
-            }
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.5; }
         }
 
         @keyframes morphing {
-            0% {
-                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            }
-
-            50% {
-                border-radius: 70% 30% 30% 70% / 70% 30% 70% 30%;
-            }
-
-            100% {
-                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            }
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 30% 70% 30%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
         }
 
         /* --- RESPONSIVE LAYOUTS --- */
@@ -647,51 +665,18 @@
                 gap: 3rem;
             }
 
-            .hero-desc {
-                margin: 0 auto 2.5rem auto;
-            }
-
-            .btn-group {
-                justify-content: center;
-            }
-
-            .timeline-meta {
-                flex-direction: column;
-                gap: 0.25rem;
-            }
-
-            .project-card {
-                transform: none !important;
-            }
-
-            .custom-cursor,
-            .custom-cursor-follower {
-                display: none;
-            }
+            .hero-desc { margin: 0 auto 2.5rem auto; }
+            .btn-group { justify-content: center; }
+            .timeline-meta { flex-direction: column; gap: 0.25rem; }
+            .custom-cursor, .custom-cursor-follower { display: none; }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: 2.8rem;
-            }
-
-            section {
-                padding: 6rem 5% 3rem 5%;
-            }
-
-            .contact-box {
-                padding: 2rem 1.5rem;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.6rem; }
+            section { padding: 5rem 5% 2rem 5%; }
+            .contact-box { padding: 2rem 1.5rem; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; }
         }
     </style>
 </head>
@@ -709,6 +694,7 @@
             <ul class="nav-links">
                 <li><a href="#hero" class="magnetic">Home</a></li>
                 <li><a href="#experience" class="magnetic">Experience</a></li>
+                <li><a href="#credentials" class="magnetic">Credentials</a></li>
                 <li><a href="#projects" class="magnetic">Projects</a></li>
                 <li><a href="#contact" class="magnetic">Contact</a></li>
             </ul>
@@ -726,8 +712,8 @@
             <h1 class="hero-title">Hello, I'm <span>Sandeep Silumula</span></h1>
 
             <div class="hero-subtitle">
-                <i class="fa-solid fa-cloud"></i> Eliminating
-                production downtime & Global Incident Leader. <br>Engineering global infrastructure resilience.</span>
+                Senior Incident & IT Operations Specialist <br>
+                <span>Bridging Production Availability with SRE & DevOps Frameworks</span>
             </div>
 
             <p class="hero-desc">Senior Incident and IT Operations Manager with over eight years of experience
@@ -745,12 +731,12 @@
         </div>
         <div class="hero-right">
             <div class="image-frame">
-                <img src="me.jpeg" alt="Profile avatar">
+                <img src="me.jpg" alt="Sandeep Silumula Professional Avatar">
             </div>
         </div>
     </section>
 
-    <section id="experience" class="reveal">
+    <section id="experience">
         <div class="section-header">
             <p class="section-tag">Background</p>
             <h2 class="section-title">Professional Journey</h2>
@@ -768,7 +754,7 @@
                     to minimize business downtime. Adept at leading cross-functional engineering teams under ITIL
                     governance and facilitating high-pressure technical bridge calls to optimize service recovery using
                     SRE principles. Proven track record of translating complex technical outages into actionable Major
-                    Incident Reports (MIRs) for C-suite and senior leadership , while driving continuous operational
+                    Incident Reports (MIRs) for C-suite and senior leadership, while driving continuous operational
                     agility by building robust observability architectures and leveraging APM tools like LogicMonitor
                     and New Relic to automate false-alert filtering.</p>
             </div>
@@ -776,8 +762,7 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-meta">
-                    <h3 class="role-title">Major Incident Manager/Service Delivery Management. <span>@ NTTDATA
-                            Services</span></h3>
+                    <h3 class="role-title">Major Incident Manager/Service Delivery Management <span>@ NTT DATA Services</span></h3>
                     <span class="role-date">2021 — 2023</span>
                 </div>
                 <p class="role-desc">Forward-thinking DevOps and Enterprise Incident Management Leader with a
@@ -793,7 +778,7 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-meta">
-                    <h3 class="role-title">Major Incident | NOC Analys. <span>@ Buchanan Technologies</span></h3>
+                    <h3 class="role-title">Major Incident | NOC Analyst <span>@ Buchanan Technologies</span></h3>
                     <span class="role-date">2018 — 2021</span>
                 </div>
                 <p class="role-desc">Highly efficient Major Incident and NOC Analyst with a proven track record of
@@ -803,15 +788,13 @@
                     and strict client SLA/SLO commitments. Adept at prioritizing concurrent high-severity issues,
                     facilitating high-impact stakeholder communications, and drafting comprehensive external post-mortem
                     statements. A collaborative coordinator focused on continuous workflow improvement, event monitoring
-                    diagnostics, and optimizing alerting tools to reduce downtime and ensure rapid service restoration.
-                </p>
+                    diagnostics, and optimizing alerting tools to reduce downtime and ensure rapid service restoration.</p>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-meta">
-                    <h3 class="role-title">Technical Support Resolution Specialist
-                        . <span>@ Buchanan Technologies</span></h3>
+                    <h3 class="role-title">Technical Support Resolution Specialist <span>@ Buchanan Technologies</span></h3>
                     <span class="role-date">2016 — 2018</span>
                 </div>
                 <p class="role-desc">Customer-focused Technical Support Specialist with extensive experience diagnosing
@@ -821,245 +804,47 @@
                     provisioning, VoIP endpoint support, and network edge administration—including firewall rule
                     adjustments and modem configuration adjustments. A disciplined communicator committed to thorough
                     documentation compliance, standard operating procedures (SOPs), and consistently exceeding target
-                    customer service quality benchmarks.
-                </p>
+                    customer service quality benchmarks.</p>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="reveal">
+    <section id="credentials">
         <div class="section-header">
-            <p class="section-tag">Showcase</p>
-            <h2 class="section-title">Selected Projects</h2>
+            <p class="section-tag">Qualifications</p>
+            <h2 class="section-title">Education & Certifications</h2>
         </div>
 
-        <div class="project-grid">
-            <div class="project-card">
-                <div>
-                    <div class="project-icon"><i class="fa-solid fa-code-branch"></i></div>
-                    <h3>Automated Cloud Core</h3>
-                    <p>An edge automation microservice framework prioritizing instant configuration provisioning and
-                        metrics visibility mapping.</p>
-                    <div class="project-tags">
-                        <span>TypeScript</span>
-                        <span>Node.js</span>
-                        <span>AWS</span>
-                    </div>
-                </div>
-                <a href="https://github.com" target="_blank" class="project-link">Source Code <i
-                        class="fa-solid fa-arrow-right"></i></a>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fa-solid fa-ribbon"></i> Professional Certifications</h3>
+                <ul class="info-list">
+                    <li>
+                        <h4>AWS Certified Solutions Architect – Associate</h4>
+                        <p>Amazon Web Services (AWS)</p>
+                    </li>
+                    <li>
+                        <h4>HashiCorp Certified: Terraform Associate</h4>
+                        <p>HashiCorp Security & IaC Governance</p>
+                    </li>
+                    <li>
+                        <h4>ITIL v4 Foundation Certificate</h4>
+                        <p>IT Service Management & Infrastructure Governance</p>
+                    </li>
+                    <li>
+                        <h4>Certified Kubernetes Administrator (CKA)</h4>
+                        <p>Cloud Native Computing Foundation (CNCF)</p>
+                    </li>
+                </ul>
             </div>
 
-            <div class="project-card">
-                <div>
-                    <div class="project-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                    <h3>Ambient Design Kit</h3>
-                    <p>An ultra-modular design language library constructed entirely around performant CSS tokens and
-                        frosted aesthetic traits.</p>
-                    <div class="project-tags">
-                        <span>React</span>
-                        <span>Tailwind</span>
-                        <span>Framer</span>
-                    </div>
-                </div>
-                <a href="https://github.com" target="_blank" class="project-link">Source Code <i
-                        class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
-            <div class="project-card">
-                <div>
-                    <div class="project-icon"><i class="fa-solid fa-database"></i></div>
-                    <h3>Distributed Cache Grid</h3>
-                    <p>High-efficiency memory clustering tool targeted at real-time key-value pair sync and data
-                        processing pipelines.</p>
-                    <div class="project-tags">
-                        <span>Go</span>
-                        <span>Redis</span>
-                        <span>Docker</span>
-                    </div>
-                </div>
-                <a href="https://github.com" target="_blank" class="project-link">Source Code <i
-                        class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="reveal">
-        <div class="contact-box">
-            <p class="section-tag" style="color: var(--accent)">Let's Collaborate</p>
-            <h2 class="section-title">Want to build something exceptional?</h2>
-            <p>I'm always open to architectural evaluations, complex freelance arrangements, or simply networking with
-                fellow technical builders.</p>
-
-            <div class="social-row">
-                <a href="mailto:your.email@example.com" class="social-btn magnetic" title="Email Me"><i
-                        class="fa-solid fa-envelope"></i></a>
-                <a href="https://github.com" target="_blank" class="social-btn magnetic" title="GitHub"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://linkedin.com" target="_blank" class="social-btn magnetic" title="LinkedIn"><i
-                        class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://twitter.com" target="_blank" class="social-btn magnetic" title="X (Twitter)"><i
-                        class="fa-brands fa-x-twitter"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Your Name. All rights reserved.</p>
-        <p>Engineered via Native CSS Modules</p>
-    </footer>
-
-    <script>
-        /* --- 1. LIGHT/DARK THEME CONTROLLER --- */
-        const themeBtn = document.getElementById('themeBtn');
-        const icon = themeBtn.querySelector('i');
-
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        updateIcon(currentTheme);
-
-        themeBtn.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            let newTheme = (theme === 'dark') ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateIcon(newTheme);
-        });
-
-        function updateIcon(theme) {
-            icon.className = (theme === 'light') ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-        }
-
-        /* --- 2. INFINITE SCROLL REVEAL / RESET CONTROLLER --- */
-        const revealCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-
-                    if (entry.target.id === 'experience') {
-                        const items = entry.target.querySelectorAll('.timeline-item');
-                        items.forEach((item, i) => {
-                            setTimeout(() => item.classList.add('active'), i * 450);
-                        });
-                    }
-                } else {
-                    entry.target.classList.remove('active');
-
-                    if (entry.target.id === 'experience') {
-                        const items = entry.target.querySelectorAll('.timeline-item');
-                        items.forEach(item => item.classList.remove('active'));
-                    }
-                }
-            });
-        };
-
-        const revealObserver = new IntersectionObserver(revealCallback, {
-            root: null,
-            threshold: 0.05
-        });
-
-        document.querySelectorAll('.reveal').forEach(section => {
-            revealObserver.observe(section);
-        });
-
-        /* --- 3. PREMIUM 3D MOUSE TILT EFFECT FOR PROJECT CARDS --- */
-        const cards = document.querySelectorAll('.project-card');
-        cards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                if (window.innerWidth < 992) return;
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const relativeX = x - (rect.width / 2);
-                const relativeY = y - (rect.height / 2);
-                const rotateX = -(relativeY / (rect.height / 2)) * 12;
-                const rotateY = (relativeX / (rect.width / 2)) * 12;
-                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-            });
-            card.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease';
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
-            });
-        });
-
-        /* --- 4. FLUID CUSTOM CURSOR CONTROL --- */
-        const cursorDot = document.getElementById('cursorDot');
-        const cursorFollower = document.getElementById('cursorFollower');
-
-        window.addEventListener('mousemove', (e) => {
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
-            cursorFollower.style.left = e.clientX + 'px';
-            cursorFollower.style.top = e.clientY + 'px';
-        });
-
-        const interactables = document.querySelectorAll('a, button, .project-card, .image-frame');
-        interactables.forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-        });
-
-        /* --- 5. MAGNETIC BUTTON MATRIX --- */
-        const magnetics = document.querySelectorAll('.magnetic');
-        magnetics.forEach(elem => {
-            elem.addEventListener('mousemove', (e) => {
-                if (window.innerWidth < 992) return;
-                const rect = elem.getBoundingClientRect();
-                const x = e.clientX - rect.left - (rect.width / 2);
-                const y = e.clientY - rect.top - (rect.height / 2);
-                elem.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-            });
-            elem.addEventListener('mouseleave', () => {
-                elem.style.transform = 'translate(0px, 0px)';
-                elem.style.transition = 'translate 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
-            });
-            elem.addEventListener('mouseenter', () => {
-                elem.style.transition = 'none';
-            });
-        });
-
-        /* --- 6. PARALLAX PARTICLE BACKGROUND ENGINE --- */
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        for (let i = 0; i < 60; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                radius: Math.random() * 1.5 + 0.5,
-                baseY: Math.random() * canvas.height,
-                speed: Math.random() * 0.15 + 0.05
-            });
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            const activeTheme = document.documentElement.getAttribute('data-theme');
-            ctx.fillStyle = (activeTheme === 'light') ? 'rgba(37, 99, 235, 0.15)' : 'rgba(255, 255, 255, 0.15)';
-            const scrollY = window.scrollY;
-
-            particles.forEach(p => {
-                let currentY = p.baseY - (scrollY * p.speed);
-                if (currentY < -10) p.baseY += canvas.height;
-                if (currentY > canvas.height + 10) p.baseY -= canvas.height;
-
-                ctx.beginPath();
-                ctx.arc(p.x, currentY, p.radius, 0, Math.PI * 2);
-                ctx.fill();
-            });
-
-            requestAnimationFrame(animateParticles);
-        }
-        animateParticles();
-    </script>
-</body>
-
-</html>
+            <div class="info-card">
+                <h3><i class="fa-solid fa-graduation-cap"></i> Academic History</h3>
+                <ul class="info-list">
+                    <li>
+                        <h4>Postgraduate Degree in Information Technology Solutions</h4>
+                        <p>Humber College, Canada</p>
+                    </li>
+                    <li>
+                        <h4>Bachelor of Technology in Computer Science Engineering</h4>
+                        <p>
